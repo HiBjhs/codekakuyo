@@ -13,5 +13,6 @@ eval (rbenv init - | source)
 sourceで読込  
 `rbenv install -l`でインストールできるのを確認　  
 `rbenv install 3.0.1`  
-`rbenv global 3.0.1`
-終わり！
+`rbenv global 3.0.1`  
+終わり！  
+ついでにRailsも
