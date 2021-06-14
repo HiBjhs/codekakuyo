@@ -16,3 +16,14 @@ sourceで読込
 `rbenv global 3.0.1`  
 終わり！  
 ついでにRailsも
+gem install -v 6.1.0 rails  
+gem install bundler  
+gem install sqlite3  
+gem install json-jwt  
+gem install jwt  
+gem install rails  
+gem install twitter  
+gem install devise  
+gem install omniauth  
+gem install omniauth-twitter  
+gem install omniauth-facebook  
