@@ -27,3 +27,16 @@ gem install devise
 gem install omniauth  
 gem install omniauth-twitter  
 gem install omniauth-facebook  
+
+ところで　`yarn install `しようとしたら `ERROR: [Errno 2] No such file or directory: 'install'`とのエラー   
+yarn再インストール
+```
+sudo apt remove cmdtest
+sudo apt remove yarn
+
+curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+sudo apt-get update
+```
+`sudo apt-get install yarn`  
+これで解決yarnが古すぎたのかしら
