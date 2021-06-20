@@ -15,7 +15,7 @@ primesnum n = (primes (n^5)) !! (n-1)
 primewhere :: Int -> Int
 primewhere n = sum [1 | _ <- primes n]
 
---シーザー暗号
+--シーザー暗号tukuru
 let2int :: Char -> Int
 --ord :: Char -> Int
 let2int c = ord c - ord 'a'
