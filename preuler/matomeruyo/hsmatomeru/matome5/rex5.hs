@@ -18,7 +18,7 @@ primewhere n = if prime n then sum [1 | _ <- primes n] else 0
 --シーザー暗号tukuru
 let2int :: Char -> Int
 --ord :: Char -> Int
-let2int c = ord c - ord 'a'
+let2int c = ord c  ord 'a'
 int2let :: Int -> Char
 --chr :: Int-> Char
 int2let n = chr (ord 'a' + n)
