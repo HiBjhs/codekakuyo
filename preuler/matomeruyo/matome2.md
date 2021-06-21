@@ -2,7 +2,20 @@
 ghcupを用いる
 インストールはいつか書く以下に
 ***
-ここ　　  
+まずghcupを用いいる際のghcupのインストールから公式サイト  
+[公式サイト](https://www.haskell.org/ghcup/)に行きインストール  
+インストールが完了したら`ghcup list`で利用可能なツールのバージョンを確認  
+`ghc -h`でコマンドの一覧を出せる  
+`ghcup install XXX`でインストールしたいものをインストールcabal,hls,ghc,stackまあお好みで  
+終わり  
+追記  
+>>[1 of 1] Compiling Main             ( hello.hs, hello.o )
+Linking hello ...
+/usr/bin/ld.gold: エラー: -lgmp が見つかりません
+collect2: error: ld returned 1 exit status
+'gcc' failed in phase `Linker'. (Exit code: 1)  
+
+上記のエラーが発生することがあるが`ghcup`にてghcをインストールし直したら直った完
 ***
 さて  
 | ghciコマンド | 動作 |  
