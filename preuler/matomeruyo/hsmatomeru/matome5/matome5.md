@@ -1,6 +1,6 @@
 はい  
 関係ないけどfishでの連番ファイルの作り方`mkdir a(seq 1 6)`  
->$ls  
+$ls  
 a1 a2 a3 a4 a5 a6  
 
 
