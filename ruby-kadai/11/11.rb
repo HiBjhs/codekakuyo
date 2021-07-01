@@ -6,7 +6,7 @@ n = array.length
     	(i + 1...n).each do |j|
       	if array[i] > array[j]
            temp = array[i]
-array[i] = array[j]
+           array[i] = array[j]
            array[j] = temp
 			end
    	end
