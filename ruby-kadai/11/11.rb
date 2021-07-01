@@ -58,8 +58,8 @@ def insertion_sort(array)
 end
 
 
-a = 100 #Nの値の範囲は100~10000を100区切りとした
-while a <= 10000 do
+a = 20000 #Nの値の範囲は100~10000を100区切りとした
+while a <= 20000 do
   p "現在のaは#{a}"
   data = [*1..a].shuffle
   Benchmark.bm 15 do |x|
