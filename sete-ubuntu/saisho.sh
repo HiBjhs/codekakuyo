@@ -10,4 +10,5 @@
  sudo apt install zeal -y
  sudo apt install snapd
  sudo snap install postman
-
+ sudo apt install screen
+ sudo apt install curl
