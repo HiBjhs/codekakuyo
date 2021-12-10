@@ -7,3 +7,7 @@ saisho.shを実行
 chmod u+x saisho.sh
 ```
 デフォルトshellの変更  
+fishかzshにする  
+fishならば https://github.com/fish-shell/fish-shell  
+のとおりにする  
+editorは好みだがvim推奨vimrc 
