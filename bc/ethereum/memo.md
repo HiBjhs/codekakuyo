@@ -15,7 +15,7 @@ sudo add-apt-repository -y ppa:ethereum/ethereum
 sudo apt install -y ethereum
 npm install -g solc
 ```  
-スクリプトにしといて実行するだけにしといても良い  
+スクリプトにしといて実行するだけにしといた方が良い  
 やる場合はエディターで開いたファイルの頭に  
 ```
 #!/bin/sh
@@ -25,3 +25,14 @@ npm install -g solc
 chmod a+x ファイル名.sh
 ```
 で実行権限を与えておく  
+Ethereumファイルを作成  
+```
+cd ~
+mkdir Ethereum
+cd Ethereum
+
+```
+
+## Genesisファイル作成
+
+
