@@ -41,5 +41,19 @@ takahashi
 
 ```
 上記のFaucetにアクセスし作成したEOAのアドレスを入れるて ``` Give me Ropsten ETH```を押す(もらえるのは一日一回)  
-30分くらいでethが入る  
+90分くらいでethが入る  
+metamaskからいけるRopsten Faucet死んでるっぽい？(原因不明)    
+metamaskから貰おうとするもerror500が発生して受け取れず  
+0x4B7ae9FC1e47954b4a789205e1505A486B20E371
 ### 送金を試す  
+```
+eth.sendTransaction({from: eth.accounts[2], to: eth.accounts[0], value: web3.toWei(0.001, "ether")}) 
+"0x05ee5ac1df84e9b1ee359b53252f6ee7bd834721db609dc32dd9f38ad2e8139f"
+
+eth.getBalance(alice)
+
+1000000000000000
+> eth.getBalance(takahashi)
+9998901468041349000
+
+```
