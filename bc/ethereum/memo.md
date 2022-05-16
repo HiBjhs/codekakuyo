@@ -32,6 +32,13 @@ mkdir Ethereum
 cd Ethereum
 
 ```
+## metamaskの追加  
+https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn  
+https://metamask.io/  
+を手順を確認しながら行う  
+成功したら拡張機能の所に狐が出てくる  
+ニーモニックバックアップは秘密にし保管方法を考えとく(物理的にも残すとか)  
+
 
 ## Genesisファイル作成
 
