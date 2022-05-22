@@ -151,3 +151,5 @@ Binary:
 Contract JSON ABI
 [{"inputs":[{"internalType":"uint256","name":"withdraw_amount","type":"uint256"}],"name":"withdraw","outputs":[],"stateMutability":"nonpayable","type":"function"},{"stateMutability":"payable","type":"receive"}]
 ```
+Binary Codeを"0x"とくっつけて実行する  
+ABIは機械と人間両方にわかりやすくした形式のはず  
