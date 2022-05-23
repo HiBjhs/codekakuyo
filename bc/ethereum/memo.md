@@ -3,7 +3,9 @@
 取り敢えず色々使うための準備  
 めんどくさくならないように色々最初に入れとく  
 npmとnodeのアップデート  
-色々warnが出るけど後から対応しとく  
+色々warnが出るけど後から対応しとく    
+プラベートネットでアカウント作るときは名前とパスワードをおんなじにしとくと簡単でいい(ほんとはすなよ)  
+
 
 ```
 sudo npm install n -g
@@ -134,12 +136,49 @@ eth.getBlock(0)
 ["0x06025ae68a789caa7111e845c9b131d82d2faa09", "0x8d354193b59717e083b9e3c9cf366c87edc7a4a4"]
 > eth.coinbase
 "0x06025ae68a789caa7111e845c9b131d82d2faa09"
+/ここでマイニングをスタートさせてる
 > miner.start()
 null
 > eth.blockNumber
 0
 > eth.blockNumber
 162
+8892
+> eth.getBalance(eth.accounts[0])
+1.7798e+22
+
+```
+
+### 送金
+
+```
+> personal.unlockAccount(eth.accounts[0])
+Unlock account 0x06025ae68a789caa7111e845c9b131d82d2faa09
+Passphrase: 
+true
+> eth.sendTransaction({from: eth.accounts[0], to: eth.accounts[1], value: web3.toWei(1, "ether")})
+"0x38eff908d3358381817a97764d2db31ff57548addb4d3ed16f8d84eee91e4d56"
+>  eth.getTransaction('0x38eff908d3358381817a97764d2db31ff57548addb4d3ed16f8d84eee91e4d56')
+{
+  blockHash: "0xc46b78c3c1470ff415570d78598a933a6302d8c30549e93c8fa25546fe381895",
+  blockNumber: 8905,
+  from: "0x06025ae68a789caa7111e845c9b131d82d2faa09",
+  gas: 21000,
+  gasPrice: 1000000000,
+  hash: "0x38eff908d3358381817a97764d2db31ff57548addb4d3ed16f8d84eee91e4d56",
+  input: "0x",
+  nonce: 0,
+  r: "0x2ed80fc8af5e7f824600adf754d8a0f98bf4d24973baaf45afd38c6575a99032",
+  s: "0x43011b87f30e3f1dd70738273ec02155b24ce692bc2eee148bfa4041fc74835e",
+  to: "0x8d354193b59717e083b9e3c9cf366c87edc7a4a4",
+  transactionIndex: 0,
+  type: "0x0",
+  v: "0x41",
+  value: 1000000000000000000
+}
+> eth.getBalance(eth.accounts[1])
+
+1000000000000000000
 
 ```
 faucetのスマートコントラクトをコンパイルする(solidity)
@@ -152,4 +191,63 @@ Contract JSON ABI
 [{"inputs":[{"internalType":"uint256","name":"withdraw_amount","type":"uint256"}],"name":"withdraw","outputs":[],"stateMutability":"nonpayable","type":"function"},{"stateMutability":"payable","type":"receive"}]
 ```
 Binary Codeを"0x"とくっつけて実行する  
-ABIは機械と人間両方にわかりやすくした形式のはず  
+ABIは機械と人間両方にわかりやすくした形式のはず   
+コントラクトの生成  
+```
+> var bin ="0x"+"608060405234801561001057600080fd5b50610154806100206000396000f3fe6080604052600436106100225760003560e01c80632e1a7d4d1461002e57610029565b3661002957005b600080fd5b34801561003a57600080fd5b50610055600480360381019061005091906100f1565b610057565b005b67016345785d8a000081111561006c57600080fd5b3373ffffffffffffffffffffffffffffffffffffffff166108fc829081150290604051600060405180830381858888f193505050501580156100b2573d6000803e3d6000fd5b5050565b600080fd5b6000819050919050565b6100ce816100bb565b81146100d957600080fd5b50565b6000813590506100eb816100c5565b92915050565b600060208284031215610107576101066100b6565b5b6000610115848285016100dc565b9150509291505056fea2646970667358221220d12e8cef7155795c84290cadfe716086012a55fdc7a9a740c79ae3ed8bb5018f64736f6c634300080d0033"
+undefined
+> var abi=[{"inputs":[{"internalType":"uint256","name":"withdraw_amount","type":"uint256"}],"name":"withdraw","outputs":[],"stateMutability":"nonpayable","type":"function"},{"stateMutability":"payable","type":"receive"}]
+undefined
+> var contract = eth.contract(abi)
+undefined
+```
+### コントラクトアカウントの作成
+```
+> personal.unlockAccount(eth.accounts[0])
+
+Unlock account 0x06025ae68a789caa7111e845c9b131d82d2faa09
+Passphrase: 
+true
+> var myContract = contract.new({ from: eth.accounts[0], data: bin})
+undefined
+> myContract
+{
+  abi: [{
+      inputs: [{...}],
+      name: "withdraw",
+      outputs: [],
+      stateMutability: "nonpayable",
+      type: "function"
+  }, {
+      stateMutability: "payable",
+      type: "receive"
+  }],
+  address: "0xabd2366fcf1d23887120dcdbb5440db85bc518df",
+  transactionHash: "0xb932bd72ba4e332a78fd390ac35346d89b2df2c9e76306a7310827f157ce601e",
+  allEvents: function bound(),
+  withdraw: function bound()
+}
+> myContract.address
+"0xabd2366fcf1d23887120dcdbb5440db85bc518df"
+> myContract.abi
+[{
+    inputs: [{
+        internalType: "uint256",
+        name: "withdraw_amount",
+        type: "uint256"
+    }],
+    name: "withdraw",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function"
+}, {
+    stateMutability: "payable",
+    type: "receive"
+}]
+> var cnt = eth.contract(myContract.abi).at(myContract.address);
+undefined
+> personal.unlockAccount(eth.accounts[0])
+Unlock account 0x06025ae68a789caa7111e845c9b131d82d2faa09
+Passphrase: 
+true
+```
