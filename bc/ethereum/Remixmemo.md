@@ -7,4 +7,4 @@ https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpg
 まれに偽物があるので注意！  
 一応まとめたスライド貼っとく  
 https://speakerdeck.com/hib/zemi-2  
-これ通りにやれば動くはず
+これ通りにやれば動くはず  
