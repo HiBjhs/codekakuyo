@@ -253,5 +253,6 @@ true
 ```
 
 SPoF(単一障害点)  
+  
 ワイオミング州でDAO法が制定  
 https://www.americancryptofed.org/  
