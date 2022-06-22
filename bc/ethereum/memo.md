@@ -251,3 +251,7 @@ Unlock account 0x06025ae68a789caa7111e845c9b131d82d2faa09
 Passphrase: 
 true
 ```
+
+SPoF(単一障害点)  
+ワイオミング州でDAO法が制定  
+https://www.americancryptofed.org/  
