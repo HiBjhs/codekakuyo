@@ -10,3 +10,5 @@ https://makerdao.com/ja/whitepaper
 デプロイするためスマートコントラクト機能を備えている。  
 P2Pネットワークを介してデータの共有を行う。  
 EOAとコントラクトアカウント  
+Metamask Flask を有効にする  
+https://metamask.io/flask/  
