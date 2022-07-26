@@ -20,3 +20,17 @@ const promise = new Promise((resolve) => {
 ```
 PromiseValue にresolveに渡した文字列が入る  
 PromiseValueへと格納された値を次のメソッドの第一引数に渡すことができる。  
+
+```
+const promise = new Promise((resolve, reject) => {
+    reject();
+})
+    .then(() => {
+        console.log("resolveしたよ");
+    })
+    .catch(() => {
+        console.log("rejectしたよ");
+    });
+
+```
+このコードだとrejectedの状態にはならないけどそれは別にrejectedの状態に一回もならないという意味ではなくてcatchにの処理を行う直前ではrejectedになっているのだけれどcatchした後のreturnされた値はresolveされるので結果としてコード終わりにはpromisestatusはresolveになる  
