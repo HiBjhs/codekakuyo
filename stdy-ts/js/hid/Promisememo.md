@@ -33,4 +33,4 @@ const promise = new Promise((resolve, reject) => {
     });
 
 ```
-このコードだとrejectedの状態にはならないけどそれは別にrejectedの状態に一回もならないという意味ではなくてcatchにの処理を行う直前ではrejectedになっているのだけれどcatchした後のreturnされた値はresolveされるので結果としてコード終わりにはpromisestatusはresolveになる  
+このコードだとrejectedの状態にはならないけどそれは別にrejectedの状態に一回もならないという意味ではなくてcatchの処理を行う直前ではrejectedになっているのだけれどcatchした後のreturnされた値はresolveされるので結果としてコード終わりにはpromisestatusはresolveになる  
